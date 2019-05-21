@@ -14,10 +14,10 @@ const App = ({
     sha256.update(password)
     return sha256.digest('hex')
   },
-  makeString = (arr: (string | null)[][]) => {
+  makeString = (arr: string[][]) => {
     return arr
       .reduce((acm, val) => acm.concat(val), [])
-      .reduce((acm, val) => acm + val)
+      .reduce((acm, val) => (val === '' ? acm + 'salt' : acm + val))
   },
   row = 1,
   col = 1
