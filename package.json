@@ -7,7 +7,7 @@
     "eslint": "eslint src/**/*.{js,ts,tsx} --fix",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "deploy": "rimraf dist && yarn build && netlify deploy -d dist --prod",
+    "deploy": "rimraf dist && npm run build && netlify deploy -d dist --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
