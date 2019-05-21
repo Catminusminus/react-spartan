@@ -1,0 +1,50 @@
+{
+  "name": "react-spartan",
+  "version": "0.1.0",
+  "description": "A React component which provides SPARTAN.",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint src/**/*.{js,ts,tsx} --fix",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "deploy": "rimraf dist && yarn build && netlify deploy -d dist --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "netlify-cli": "^2.11.19",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
+  }
+}
